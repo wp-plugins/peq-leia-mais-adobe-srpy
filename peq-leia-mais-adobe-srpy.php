@@ -34,7 +34,7 @@ config.entities = false;
 */
 
 //DEFINE AQUI NOME DO PLUGIN
-define( 'peqLeia_PEQ_PLUGIN', 'peq_leiamais_Spry_Adobe' );
+define( 'peqLeia_PEQ_PLUGIN', 'peq-leia-mais-adobe-srpy' );
 
 ///DEFININDO PASTA LOCAL
 if ( ! defined( 'peqLeia_PLUGIN_BASENOME' ) )
