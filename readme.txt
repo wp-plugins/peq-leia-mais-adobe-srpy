@@ -8,17 +8,22 @@ Stable tag: 1.0
 
 Abra e Feche um resumo de conteudo de forma pratica.
 
-== Descrição ==
+== Description ==
 
 Oculta o conteudo de texto e mostra somente um link Leia mais..., ao clicar no link abre o conteudo de forma suave com javascript.
 
-== Instalação ==
+== Installation ==
 
 1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Use short code [peqLeia abrir='leia mais...' fechar='fechar']
 
-== ckeditor ==
+Exemplo
+
+[peqLeia abrir='leia mais...' fechar='fechar']
+Conteudo de exemplo non ono no nonon ono o o no no non n on
+[/peqLeia]
+
 caso utilize o editor ckeditor adicionar a linha de comando ao arquivo:
 ckeditor-for-wordpress/ckeditor.config.js
 config.entities = false;
@@ -29,8 +34,3 @@ config.entities = false;
 1. screenshot-1.jpg
 2. screenshot-2.jpg
 
-== Exemplo ==
-
-[peqLeia abrir='leia mais...' fechar='fechar']
-Conteudo de exemplo non ono no nonon ono o o no no non n on
-[/peqLeia]
