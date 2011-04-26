@@ -32,3 +32,5 @@ config.entities = false;
 == Exemplo ==
 
 [peqLeia abrir='leia mais...' fechar='fechar']
+Conteudo de exemplo non ono no nonon ono o o no no non n on
+[/peqLeia]
