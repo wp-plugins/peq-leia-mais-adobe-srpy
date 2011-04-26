@@ -1,59 +1,34 @@
 ﻿=== peq Leia Mais spry adobe ===
-Contributors: nenhum
+Contributors: pablo erick
 Donate link: http://peq.110mb.com/
-Tags: adobe, spry 
-Requires at least: 2.0.2
-Tested up to: 2.1
-Stable tag: 4.3
+Tags: adobe, spry , javascript, efeito, jquery, ocultar texto
+Requires at least: 3.0
+Tested up to: 3.1
+Stable tag: 1.0
+
+Abra e Feche um resumo de conteudo de forma pratica.
+
+== Descrição ==
 
 Oculta o conteudo de texto e mostra somente um link Leia mais..., ao clicar no link abre o conteudo de forma suave com javascript.
 
-== Description ==
-
-Oculta o conteudo de texto e mostra somente um link Leia mais..., ao clicar no link abre o conteudo de forma suave com javascript.
-
-== Installation ==
+== Instalação ==
 
 1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Use short code [peqLeia link="leia mais"]vai que da rapa[/peqLeia]
+3. Use short code [peqLeia abrir='leia mais...' fechar='fechar']
 
-== Frequently Asked Questions ==
-
-= A question that someone might have =
-
-
-= What about foo bar? =
+== ckeditor ==
+caso utilize o editor ckeditor adicionar a linha de comando ao arquivo:
+ckeditor-for-wordpress/ckeditor.config.js
+config.entities = false;
 
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the directory of the stable readme.txt, so in this case, `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif)
-2. This is the second screen shot
+1. screenshot-1.jpg
+2. screenshot-2.jpg
 
-== Changelog ==
-
-= 1.0 =
-* A change since the previous version.
-
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
-
-== Upgrade Notice ==
-
-= 1.0 =
-
-
-= 0.5 =
-
-
-== Arbitrary section ==
-
-
-== A brief Markdown Example ==
+== Exemplo ==
 
 [peqLeia abrir='leia mais...' fechar='fechar']
-caso utilize o editor ckeditor adicionar a linha de comando ao arquivo:
-ckeditor-for-wordpress/ckeditor.config.js
-config.entities = false;
