@@ -27,14 +27,14 @@ Author URI: http://peq.110mb.com
 
 /*
 FORMA DE USAR:
-[peqLeia abrir='leia mais...' fechar='fechar']
+[peqLeia abrir='leia mais...' fechar='fechar'][/peqLeia]
 caso utilize o editor ckeditor adicionar a linha de comando ao arquivo:
 ckeditor-for-wordpress/ckeditor.config.js
 config.entities = false;
 */
 
 //DEFINE AQUI NOME DO PLUGIN
-define( 'peqLeia_PEQ_PLUGIN', 'peq-leia-mais-adobe-srpy' );
+define( 'peqLeia_PEQ_PLUGIN', 'peq-leia-mais-adobe-spry' );
 
 ///DEFININDO PASTA LOCAL
 if ( ! defined( 'peqLeia_PLUGIN_BASENOME' ) )
