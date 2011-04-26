@@ -27,7 +27,10 @@ Author URI: http://peq.110mb.com
 
 /*
 FORMA DE USAR:
-[peqLeia link="leia mais"]vai que da rapa[/peqLeia]
+[peqLeia abrir='leia mais...' fechar='fechar']
+caso utilize o editor ckeditor adicionar a linha de comando ao arquivo:
+ckeditor-for-wordpress/ckeditor.config.js
+config.entities = false;
 */
 
 //DEFINE AQUI NOME DO PLUGIN
@@ -49,7 +52,7 @@ global $shortcode_tags;//comando filha da mae de achar
 //add_action('admin_menu', 'peqLeia_meu_plugin_menu');
 add_action('wp_head', 'peqLeia_cabecalho', 10);
 //add_filter('the_content', 'peqLeia_conteudo', 1);
-add_shortcode('peqPopup', 'peqLeia_substituir_my_tags'); //TAGS PERSONALISADAS 
+add_shortcode('peqLeia', 'peqLeia_substituir_my_tags'); //TAGS PERSONALISADAS 
 
 //add_filter('the_content', 'do_shortcode');
 //add_filter('the_excerpt', 'do_shortcode');
@@ -99,7 +102,9 @@ function peqLeia_admin_pag_1() {
 //FUNCAO CHAMADA NO CABECALHO DO SITE
 function peqLeia_cabecalho($cabecalho_texto = '') {
   $wpurl = get_bloginfo('wpurl');
-  $cabecalho_texto .= '<script type="text/javascript" src="'.$wpurl.'/wp-content/plugins/'.peqLeia_PLUGIN_NOME.'/tooltip/SpryTooltip.js"></script>';
+  $cabecalho_texto .= '<script type="text/javascript" src="'.$wpurl.'/wp-content/plugins/'.peqLeia_PLUGIN_NOME.'/tooltip/SpryCollapsiblePanel.js"></script>';
+  //<script src="../../widgets/collapsiblepanel/SpryCollapsiblePanel.js" type="text/javascript"></script>
+//<link href="../../widgets/collapsiblepanel/SpryCollapsiblePanel.css" rel="stylesheet" type="text/css" />
   //$content .= '<script type="text/javascript" src="'. $wpurl .'/wp-content/plugins/tippy/dom_tooltip.js"></script>';
   echo $cabecalho_texto;
 }
@@ -111,7 +116,8 @@ function peqLeia_conteudo($conteudo_texto) {
   //$content .= get_option(PEQ_PLUGIN.'_valor1');
   //$content .= '<script type="text/javascript" src="'. $wpurl .'/wp-content/plugins/tippy/dom_tooltip.js"></script>';
   //$conteudo_texto .= "";
-  echo $conteudo_texto;
+  //$conteudo_texto = str_replace('&quot;','"',$conteudo_texto);
+ // echo $conteudo_texto;
 }
 
 //SUBSTITUI TAGS PERSONALIZADAS
@@ -119,8 +125,24 @@ function peqLeia_substituir_my_tags($atts, $content = '') {
   global $id_spry;
   $id_spry++;
   extract(shortcode_atts(array(
-  'link' => 'leia mais...',
+  'abrir' => 'leia mais...',
+  'fechar' => '',
   ), $atts));
-  return 'teste';
+  return ' <a href="javascript:abrir_'.$id_spry.'();"><span id = "link_leia_'.$id_spry.'">'.$abrir.'</span></a>
+  <div id="CollapsiblePanel_'.$id_spry.'" class="CollapsiblePanel">
+   <div class="CollapsiblePanelTab"></div>
+  <div class="CollapsiblePanelContent">'.$content.'<p><a href="javascript:fechar_'.$id_spry.'();">'.$fechar.'</a></p></div>
+</div>
+<script type="text/javascript">
+var CollapsiblePanel_'.$id_spry.' = new Spry.Widget.CollapsiblePanel("CollapsiblePanel_'.$id_spry.'", {contentIsOpen:false});
+abrir_'.$id_spry.' = function (){
+document.getElementById("link_leia_'.$id_spry.'").innerHTML = "";
+CollapsiblePanel_'.$id_spry.'.open();
+}
+fechar_'.$id_spry.' = function (){
+document.getElementById("link_leia_'.$id_spry.'").innerHTML = "'.$abrir.'";
+CollapsiblePanel_'.$id_spry.'.close();
+}
+</script>';
 }
 ?>
